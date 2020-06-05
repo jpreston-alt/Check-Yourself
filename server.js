@@ -25,7 +25,63 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
+// forced true turned on in dev mode -- will delete when we deploy
+db.sequelize.sync({force: true}).then(() => {
+
+  // pre-populate some test table data -- delete when deploy
+  db.User.create({
+    email: "joannappreston@gmail.com",
+    password: "igloos"
+  }).then(function() {
+    db.Expense.create({
+      item: "Electric Bill",
+      cost: 59.78,
+      category: "needs",
+      UserId: 1
+    });
+
+    db.Expense.create({
+      item: "Movie Tickets",
+      cost: 12.50,
+      category: "wants",
+      UserId: 1
+    });
+
+    db.Expense.create({
+      item: "Vet Bill",
+      cost: 199.6785,
+      category: "needs",
+      createdAt: '2020-05-05 16:02:12',
+      UserId: 1
+    });
+
+    db.Expense.create({
+      item: "Student Loan Payment",
+      cost: 300,
+      category: "savings",
+      createdAt: '2020-04-05 16:02:12',
+      UserId: 1
+    });
+
+    db.Income.create({
+      amount: 3000,
+      createdAt: '2020-06-05 16:02:12',
+      UserId: 1
+    });
+
+    db.Income.create({
+      amount: 1500,
+      createdAt: '2020-05-05 16:02:12',
+      UserId: 1
+    });
+
+    db.Income.create({
+      amount: 2200,
+      createdAt: '2020-04-05 16:02:12',
+      UserId: 1
+    });
+  });
+
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
