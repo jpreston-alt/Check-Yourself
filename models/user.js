@@ -32,13 +32,13 @@ module.exports = function(sequelize, DataTypes) {
     );
   });
 
-  User.associate = function (models) {
+  User.associate = function(models) {
     User.hasMany(models.Expense, {
       onDelete: "cascade"
     });
   };
 
-  User.associate = function (models) {
+  User.associate = function(models) {
     User.hasMany(models.Income, {
       onDelete: "cascade"
     });
