@@ -81,20 +81,6 @@ db.sequelize.sync().then(() => {
   //     createdAt: "2020-04-05 16:02:12",
   //     UserId: 1
   //   });
-
-  //   db.Expense.create({
-  //     item: "Shopping",
-  //     cost: 100,
-  //     category: "wants",
-  //     UserId: 1
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Rent",
-  //     cost: 300,
-  //     category: "needs",
-  //     UserId: 1
-  //   });
   // });
 
   // db.User.create({
@@ -121,8 +107,8 @@ db.sequelize.sync().then(() => {
   //   });
 
   //   db.Expense.create({
-  //     item: "Car payment",
-  //     cost: 150,
+  //     item: "Car Payment",
+  //     cost: 200,
   //     category: "savings",
   //     UserId: 2
   //   });
