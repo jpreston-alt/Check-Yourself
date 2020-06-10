@@ -8,6 +8,7 @@ $(document).ready(() => {
   let leftoverBudget;
 
   $("#submit-expense-btn").on("click", addExpense);
+  $("#delete-expense-btn").on("click", deleteExpense);
 
   displayChart();
 
@@ -53,6 +54,17 @@ $(document).ready(() => {
     });
   };
 
+  // delete an expense
+  function deleteExpense() {
+    let expenseId = $("#delete-expense").val().trim();
+    $.ajax(`/api/expenses/${expenseId}`, {
+      type: "DELETE",
+    }).then(data => {
+      console.log(data);
+      location.reload();
+    });
+  };
+
   // display chart based on expense and income data
   function displayChart() {
     getExpenseData(data => {
@@ -92,7 +104,7 @@ $(document).ready(() => {
       data.map(el => incomes.push(Number(el.amount)));
 
       totalIncome = findSum(incomes);
-      leftoverBudget = totalIncome - (wantsSum, needsSum, savingsSum);
+      leftoverBudget = totalIncome - (wantsSum + needsSum + savingsSum);
       cb(leftoverBudget);
     });
   };

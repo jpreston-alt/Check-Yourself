@@ -2,7 +2,7 @@ const db = require("../models");
 
 // ****************************** EXPENSE API ROUTES ********************************** //
 module.exports = function(app) {
-  // post expense
+  // post expense from a user
   app.post("/api/expenses", (req, res) => {
     db.Expense.create({
       item: req.body.item,
@@ -18,7 +18,22 @@ module.exports = function(app) {
       });
   });
 
-  // delete expense
+  // get all expenses from a single user
+  app.get("/api/expenses", (req, res) => {
+    db.Expense.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    })
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.status(404).json(err);
+      });
+  });
+
+  // delete expense based on items unique identifier
   app.delete("/api/expenses/:id", (req, res) => {
     db.Expense.destroy({
       where: {
@@ -33,19 +48,4 @@ module.exports = function(app) {
   });
 
   // update expense
-
-  // get current month expenses, based on userID
-  app.get("/api/expenses", (req, res) => {
-    db.Expense.findAll({
-      where: {
-        UserId: req.user.id
-      }
-    })
-      .then(data => {
-        res.json(data);
-      })
-      .catch(err => {
-        res.status(404).json(err);
-      });
-  });
 };

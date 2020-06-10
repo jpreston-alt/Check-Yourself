@@ -31,7 +31,19 @@ module.exports = function(app) {
       });
   });
 
-  // update income
+  // delete user income
+  app.delete("/api/income", (req, res) => {
+    db.Income.destroy({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(result => {
+      if (result.affectedRows === 0) {
+        return res.status(404).end();
+      }
+      res.status(200).end();
+    });
+  });
 
-  // delete income
+  // update income
 };

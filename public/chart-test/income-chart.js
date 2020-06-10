@@ -10,6 +10,7 @@ $(document).ready(() => {
   displayChart();
   
   $("#submit-income-btn").on("click", postIncome);
+  $("#delete-income-btn").on("click", deleteIncome);
 
   // post income api call
   function postIncome(event) {
@@ -37,6 +38,16 @@ $(document).ready(() => {
       type: "GET",
     }).then(data => {
       cb(data);
+    });
+  };
+
+  // delete an expense
+  function deleteIncome() {
+    $.ajax("/api/income", {
+      type: "DELETE",
+    }).then(data => {
+      console.log(data);
+      location.reload();
     });
   };
 
