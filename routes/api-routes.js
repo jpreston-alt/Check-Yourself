@@ -12,6 +12,9 @@ module.exports = function(app) {
       email: req.user.email,
       id: req.user.id
     });
+
+    // set user ID to session storage, to be accessed later
+    // console.log(req.user);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
