@@ -22,98 +22,11 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-require("./routes/test-chart-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/expense-api-routes.js")(app);
+require("./routes/income-api-routes.js")(app);
 
-// Syncing our database and logging a message to the user upon success
-// forced true turned on in dev mode -- will delete when we deploy
 db.sequelize.sync().then(() => {
-  // pre-populate some test table data -- delete when deploy
-  // db.User.create({
-  //   email: "a@a.com",
-  //   password: "passwordA"
-  // }).then(() => {
-  //   db.Expense.create({
-  //     item: "Electric Bill",
-  //     cost: 59.78,
-  //     category: "needs",
-  //     UserId: 1
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Movie Tickets",
-  //     // eslint-disable-next-line prettier/prettier
-  //     cost: 12.50,
-  //     category: "wants",
-  //     UserId: 1
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Vet Bill",
-  //     cost: 199.6785,
-  //     category: "needs",
-  //     createdAt: "2020-05-05 16:02:12",
-  //     UserId: 1
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Student Loan Payment",
-  //     cost: 300,
-  //     category: "savings",
-  //     createdAt: "2020-04-05 16:02:12",
-  //     UserId: 1
-  //   });
-
-  //   db.Income.create({
-  //     amount: 3000,
-  //     createdAt: "2020-06-05 16:02:12",
-  //     UserId: 1
-  //   });
-
-  //   db.Income.create({
-  //     amount: 1500,
-  //     createdAt: "2020-05-05 16:02:12",
-  //     UserId: 1
-  //   });
-
-  //   db.Income.create({
-  //     amount: 2200,
-  //     createdAt: "2020-04-05 16:02:12",
-  //     UserId: 1
-  //   });
-  // });
-
-  // db.User.create({
-  //   email: "w@w.com",
-  //   password: "passwordW"
-  // }).then(() => {
-  //   db.Expense.create({
-  //     item: "Rent",
-  //     cost: 1100,
-  //     category: "needs",
-  //     UserId: 2
-  //   });
-
-  //   db.Income.create({
-  //     amount: 2000,
-  //     UserId: 2
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Shopping",
-  //     cost: 100,
-  //     category: "wants",
-  //     UserId: 2
-  //   });
-
-  //   db.Expense.create({
-  //     item: "Car Payment",
-  //     cost: 200,
-  //     category: "savings",
-  //     UserId: 2
-  //   });
-  // });
-
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

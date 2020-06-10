@@ -27,4 +27,18 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  // html route for expense chart
+  app.get("/expense-chart", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "../public/chart-test/expense-chart.html")
+    );
+  });
+
+  // html route for income chart
+  app.get("/income-chart", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "../public/chart-test/income-chart.html")
+    );
+  });
 };
