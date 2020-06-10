@@ -13,9 +13,49 @@
 
 <body>
 
+
     <div class="container">
-        <canvas id="myChart"></canvas>
+        <div class="row">
+            <div class="col">
+                <canvas id="goalChart"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <canvas id="actualChart"></canvas>
+            </div>
+        </div>
     </div>
+
+    <div class="container">
+        <p>Enter an Expense:</p>
+        <div class="input-group">
+            <input type="text" id="expense-item" placeholder="item">
+            <input type="text" id="expense-cost" placeholder="cost">
+            <div class="input-group-append" id="choose-category-group">
+                <select class="custom-select" id="choose-category-dropdown">
+                    <option selected>Category...</option>
+                    <option value="wants">Wants</option>
+                    <option value="needs">Needs</option>
+                    <option value="savings">Savings</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="submit-expense-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 40px">
+        <p>Enter Monthly Income:</p>
+        <div class="input-group">
+            <input type="text" id="income-amount" placeholder="Amount">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="submit-income-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../chart-test/chart.js"></script>

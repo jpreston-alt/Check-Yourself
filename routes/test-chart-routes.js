@@ -7,6 +7,38 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/chart-test/chart.html"));
   });
 
+  // post expense
+  app.post("/api/expenses", (req, res) => {
+    db.Expense.create({
+      item: req.body.item,
+      cost: req.body.cost,
+      category: req.body.category,
+      UserId: req.user.id
+    })
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.status(404).json(err);
+      });
+  });
+
+  // post income
+  app.post("/api/income", (req, res) => {
+    db.Income.create({
+      amount: req.body.amount,
+      UserId: req.user.id
+    })
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.status(404).json(err);
+      });
+  });
+
+  // update income
+
   // get current month expenses, based on userID
   app.get("/api/expenses", (req, res) => {
     db.Expense.findAll({
