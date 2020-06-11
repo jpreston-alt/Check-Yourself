@@ -1,0 +1,14 @@
+<div class="conatiner">
+    <div class="card text-center" id="menu">
+        <div class="card-header">
+            <h3 class="card-title">Income Amounts</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {{#each income}}
+                <li class="list-group-item">${{dataValues.amount}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

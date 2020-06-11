@@ -33,7 +33,7 @@ module.exports = function(app) {
       });
   });
 
-  // delete expense based on items unique identifier
+  // delete a single expense based on expense ID
   app.delete("/api/expenses/:id", (req, res) => {
     db.Expense.destroy({
       where: {
@@ -46,6 +46,4 @@ module.exports = function(app) {
       res.status(200).end();
     });
   });
-
-  // update expense
 };

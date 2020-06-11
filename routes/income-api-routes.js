@@ -31,7 +31,7 @@ module.exports = function(app) {
       });
   });
 
-  // delete user income
+  // delete user income (delete all income entered by the logged in user)
   app.delete("/api/income", (req, res) => {
     db.Income.destroy({
       where: {

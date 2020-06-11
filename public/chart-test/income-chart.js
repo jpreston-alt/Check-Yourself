@@ -41,7 +41,7 @@ $(document).ready(() => {
     });
   };
 
-  // delete an expense
+  // delete all income of logged in user
   function deleteIncome() {
     $.ajax("/api/income", {
       type: "DELETE",
@@ -66,7 +66,7 @@ $(document).ready(() => {
     });
   };
 
-  // find sum of categories
+  // find sum - for finding some of categories
   function findSum(arr) {
     const sum = arr.reduce((a, b) => {
       return a + b;
