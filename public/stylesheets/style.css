@@ -159,4 +159,25 @@ footer{
     display: table;
     clear: both;
   }
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+#accountInf {
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color:black;
+  height: 1000px;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
