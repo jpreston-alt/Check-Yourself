@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card text-center" id="expense-table">
+        <div class="card-header">
+            <h3 class="card-title">Expenses</h3>
+        </div>
+        <div class="card-body">
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                    <th>Category</th>
+                    <th>Delete</th>
+                </tr>
+                {{#each expense}}
+                <tr>
+                    <td>{{dataValues.item}}</td>
+                    <td>${{dataValues.cost}}</td>
+                    <td>{{dataValues.category}}</td>
+                    <td><button class="delete-expense-btn btn btn-outline-secondary" data-expenseID={{dataValues.id}}>X</button></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</div>
