@@ -1,0 +1,87 @@
+.inner-text {
+    background-color: white;
+    padding: 20px;
+}
+
+#about {
+    color: black;
+    background-image: url("https://img.pngio.com/abstract-simple-black-and-white-waving-3d-grid-or-mesh-as-cartoon-black-and-white-background-images-png-1920_1080.png");
+    font-family: 'Muli', sans-serif;
+}
+
+.nav-bar {
+    background-color: black;
+    color: white;
+}
+
+#nav-names {
+    color: white;
+}
+
+#logo-img {
+    height: 60px;
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#white-square {
+    background-color: white;
+    width: 700px;
+    height: 700px;
+    float: right;
+    padding: 20px;
+  }
+
+#black-square {
+    background-color: black;
+    color: white;
+    width: 650px;
+    height: 600px;
+    float: right;
+    padding: 20px;
+}
+
+.budget-icon {
+    height: 300px;
+    width: 595px;
+    padding: 20px;
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+  input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  #contact {
+    color: black;
+    background-image: url("https://wallpaperaccess.com/full/296951.jpg");
+    font-family: 'Muli', sans-serif;
+}
