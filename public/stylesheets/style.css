@@ -1,6 +1,4 @@
-form.signup,
-form.login {
-}
+
 
 html, body {
   min-height:100%;
@@ -53,13 +51,29 @@ h1{
   left: 0%;
   width: 100%;
 }
-footer{
+#landing-footer{
   background-color: black;
   height: 10%;
   margin-top: 15vh;
 }
 
+#accountInf {
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color:black;
+  height: 1000px;
+  color: white;
+}
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -92,10 +106,6 @@ footer{
   .title-section{
     background: transparent;
   }
-
-  .login-section{
-  }
-
   nav{
     background-color: transparent !important;
   }
@@ -164,20 +174,4 @@ footer{
   width: 100%;
 }
 
-#accountInf {
-  padding-top: 50px;
-  padding-left: 50px;
-  background-color:black;
-  height: 1000px;
-  color: white;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
 }
