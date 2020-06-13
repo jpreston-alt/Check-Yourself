@@ -6,28 +6,48 @@ const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  // ****************************** HTML LOGIN/SIGNUP ROUTES ********************************** //
+  // ****************************** HTML ROUTES ********************************** //
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
+<<<<<<< HEAD
       res.redirect("/incomes");
+=======
+      res.redirect("/home");
+>>>>>>> 296856652188c9c5b7778015a7e127de2ef9e7ca
       console.log(req.user);
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/login", (req, res) => {
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
+<<<<<<< HEAD
       res.redirect("/incomes");
+=======
+      res.redirect("/home");
+>>>>>>> 296856652188c9c5b7778015a7e127de2ef9e7ca
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+
+  app.get("/home", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
+
+  app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/contact.html"));
+  });
+
+  app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/about.html"));
   });
 
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //

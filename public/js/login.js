@@ -29,7 +29,11 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
+<<<<<<< HEAD
         window.location.replace("/incomes");
+=======
+        window.location.replace("/home");
+>>>>>>> 296856652188c9c5b7778015a7e127de2ef9e7ca
         // If there's an error, log the error
       })
       .catch(err => {

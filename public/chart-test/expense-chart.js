@@ -8,7 +8,7 @@ $(document).ready(() => {
   let leftoverBudget;
 
   $("#submit-expense-btn").on("click", addExpense);
-  $("#delete-expense-btn").on("click", deleteExpense);
+  $("#delete-expense-btn").on("click", deleteExpenseTest);
 
   displayChart();
 
@@ -54,9 +54,22 @@ $(document).ready(() => {
     });
   };
 
-  // delete an expense
-  function deleteExpense() {
+  // delete an expense *** only use this for test route ***
+  function deleteExpenseTest() {
     let expenseId = $("#delete-expense").val().trim();
+    $.ajax(`/api/expenses/${expenseId}`, {
+      type: "DELETE",
+    }).then(data => {
+      console.log(data);
+      location.reload();
+    });
+  };
+
+  // delete an expense 
+  // *** use this route in app to delete an expense based on it's data-ID rendered with handlebars ***
+  // eslint-disable-next-line no-unused-vars
+  function deleteExpense() {
+    let expenseId = $(this).data("expenseid");
     $.ajax(`/api/expenses/${expenseId}`, {
       type: "DELETE",
     }).then(data => {
