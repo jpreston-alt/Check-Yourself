@@ -5,8 +5,13 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+<<<<<<< HEAD
 module.exports = function(app) {
   // ****************************** HTML ROUTES ********************************** //
+=======
+module.exports = function (app) {
+  // ****************************** HTML LOGIN/SIGNUP ROUTES ********************************** //
+>>>>>>> homepage
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -31,6 +36,21 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
+
+  // about route loads about.html page
+  app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/about.html"));
+  });
+
+// contact route loads contact.html page
+  app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/contact.html"));
+});
+
+// budget route loads home.html page
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+});
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
