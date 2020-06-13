@@ -24,3 +24,95 @@
     </div>
 </div>
 
+<section id = "income-section" class = "title-section col">
+    <nav class="d-block navbar navbar-expand-sm">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" >Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" >About Us</a>
+          <a class="nav-item nav-link" >Contact</a>
+          <a class="nav-item nav-link" >Spending</a>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class = "col title title-container">
+            <h1>Your Spending</h1>
+            <p>Enter Monthly Income:</p>
+            <div class="input-group">
+                <input type="text" id="expense-item" placeholder="item">
+                <input type="text" id="expense-cost" placeholder="cost">
+                <div class="dropdown">              
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a value = "wants" class="dropdown-item" href="#">Wants</a>
+                        <a value = "needs" class="dropdown-item" href="#">Needs</a>
+                        <a value = "savings" class="dropdown-item" href="#">Saving</a>
+                    </div>
+                </div>               
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="submit-expense-btn">Submit</button>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class = "info-section col">
+    <div class="container">
+        <div class="row">
+            <canvas id="actualChart"></canvas>
+        </div>
+
+        <div class = "row">
+            <div class="card text-center" id="menu">
+                <div class="card-header">
+                    <h3 class="card-title">Spending</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each income}}
+                        <li class="list-group-item">${{dataValues.amount}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Primary Needs Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>   
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Wants Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>          
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Savings Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Monthly Budget Left</div>
+                <div class="card-body">
+                    <h5 class="card-title">Monthly Budget Left</h5>
+                </div>
+            </div>            
+        </div>
+    </div>
+  </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../public/chart-test/expense-chart.js"></script>
