@@ -1,14 +1,80 @@
-<div class="conatiner">
-    <div class="card text-center" id="menu">
-        <div class="card-header">
-            <h3 class="card-title">Income Amounts</h3>
+  <section id = "income-section" class = "title-section col">
+    <nav class="d-block navbar navbar-expand-sm">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">About Us</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+          <a class="nav-item nav-link" href="#">Spending</a>
         </div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                {{#each income}}
-                <li class="list-group-item">${{dataValues.amount}}</li>
-                {{/each}}
-            </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class = "col title title-container">
+            <h1>Your Account Information</h1>
+            <p>Enter Monthly Income:</p>
+            <div class="input-group">
+                <input type="text" id="income-amount" placeholder="Amount">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="submit-income-btn">Submit</button>
+                </div>
+            </div>
+            <p>Total Income: <span id="total-income"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+  </div>
+
+  <section class = "login-section col">
+    <div class="container">
+        <div class = "row">
+            <div class="card text-center" id="menu">
+                <div class="card-header">
+                    <h3 class="card-title">Your Income</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each income}}
+                        <li class="list-group-item">${{dataValues.amount}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Primary Needs Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>   
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Wants Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>          
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Savings Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>            
         </div>
     </div>
-</div>
+  </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../public/chart-test/income-chart.js"></script>
