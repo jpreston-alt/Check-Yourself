@@ -5,7 +5,7 @@ $(document).ready(() => {
   let leftoverBudget;
 
   $("#submit-expense-btn").on("click", addExpense);
-  $(".delete-expense-btn").on("click", deleteExpense);
+  $("delete-expense-btn").on("click", deleteExpense);
 
   displayChart();
 
@@ -52,19 +52,6 @@ $(document).ready(() => {
       type: "GET"
     }).then(data => {
       cb(data);
-    });
-  }
-
-  // delete an expense *** only use this for test route ***
-  function deleteExpenseTest() {
-    const expenseId = $("#delete-expense")
-      .val()
-      .trim();
-    $.ajax(`/api/expenses/${expenseId}`, {
-      type: "DELETE"
-    }).then(data => {
-      console.log(data);
-      location.reload();
     });
   }
 
