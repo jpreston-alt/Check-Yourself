@@ -29,7 +29,7 @@ h1{
   flex-basis: auto;
 }
 
-.login-form{
+.login-form, .signup-form{
   left: 0%;
   top: 20%;
 }
@@ -130,7 +130,7 @@ h1{
     top: 82%;
   }
   
-  .login-form{
+  .login-form, .signup-form{
     left: 30%;
     top: 60%;
   }
