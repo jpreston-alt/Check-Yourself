@@ -11,6 +11,7 @@ html, body {
 #about {
   color: black;
   font-family: 'Muli', sans-serif;
+  height: 100%;
 }
   .nav-bar {
     background-color: black;
@@ -50,4 +51,8 @@ html, body {
     background-color: black;
     color: white;
     text-align: center;
+  }
+
+  .card{
+    display: inline-block;
   }
