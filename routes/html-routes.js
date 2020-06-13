@@ -34,8 +34,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  app.get("/contact", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/contact.html"));
+  // budget route loads home.html page
+  app.get("/home", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   app.get("/about", (req, res) => {

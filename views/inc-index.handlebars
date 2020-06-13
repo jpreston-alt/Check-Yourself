@@ -1,4 +1,4 @@
-  <section id = "income-section" class = "title-section col">
+  {{!-- <section id = "income-section" class = "title-section col">
     <nav class="d-block navbar navbar-expand-sm">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -82,3 +82,92 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../public/chart-test/income-chart.js"></script>
+
+ --}}
+
+
+
+<body id="about">
+    <div class="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-names" href="home.html">Budget</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-names" href="#">Spending</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col income" id="accountInf">
+
+                <h1>Your Account Information</h1>
+                <br>
+
+                <form id="income-form">
+                    <td>
+                        <input placeholder="Enter your income" id="income-amount" type="text" />
+                    </td>
+                    <td><button id = "submit-income-btn" type="submit" class="btn btn-light">Submit Income</button>
+                    </td>
+                </form>
+            </div>
+        </div>
+        <div class="col chart">
+            <h1><span class="member-name"></span>, this is your recommended monthly budget plan:</h1>
+            <br>
+            <canvas id="goalChart"></canvas>
+
+            <div class="section" id="overviewBalance">
+                <h2>Overview</h2>
+                <div>
+                    <div id ="needs-val" class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Primary Needs Balance</div>
+                        <div class="card-body">
+                            <span id ="needs-val" class="card-title"></span>
+                        </div>
+                    </div>   
+                    <div  class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Wants Balance</div>
+                        <div class="card-body">
+                            <h5 id ="wants-val" class="card-title">{{wants}}</h5>
+                        </div>
+                    </div>          
+                    <div  class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Savings Balance</div>
+                        <div class="card-body">
+                            <h5 id = "savings-val" class="card-title">{{savings}}</h5>
+                        </div>
+                    </div>            
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>copyright</p>
+    </div>
+
+</body>
+
