@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="stylesheets/homepage.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <link href="stylesheets/homepage.css" rel="stylesheet">
     <!-- <link href="stylesheets/contactabout.css" rel="stylesheet"> -->
 
     <title>Home</title>
@@ -23,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+              <a class="nav-link" id="nav-names" href="#about">About<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+              <a class="nav-link" id="nav-names" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="home.html">Budget</a>
+                <a class="nav-link" id="nav-names" href="#home">Budget</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="#">Spending</a>
+                <a class="nav-link" id="nav-names" href="#spending">Spending</a>
               </li>
           </ul>
         </div>
@@ -48,47 +49,45 @@
 
                 <form id="income-form">
                     <td>
-                        <input placeholder="Enter your income" id="income" type="text" />
+                        <p>Enter Monthly Income:</p>
+                        <input placeholder="" id="income-amount" type="text" />
                     </td>
-                    <td><button type="submit" class="btn btn-light">Submit Income</button>
+                    <td><button type="submit" class="btn btn-light" id="submit-income">Submit Income</button>
+                    </td>
+                    <p>Total Income: <span id="total-income"></span></p>
+                    <td><button type="clear" class="btn btn-light" id="clear-income">Clear Income</button>
                     </td>
                 </form>
             </div>
         </div>
         <div class="col chart">
             <h1>XXX, this is your recommended monthly budget plan:</h1>
-            <br>
-            <div class="section" id="chart">
-            </div>
+           
+                <canvas id="goalChart"></canvas>
+            
             <div class="section" id="overviewBalance">
                 <h2>Overview</h2>
             </div>
         </div>
-
-
-
     </div>
     </div>
 
-
     </div>
-
     <div class="footer">
         <p>copyright</p>
     </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="./js/home.js"></script>
 
 </body>
 
