@@ -30,18 +30,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/home", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
-
-  app.get("/contact", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/contact.html"));
-  });
-
-  app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/about.html"));
-  });
-
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //
   // switch route name "/expenses" for spending page route name
   app.get("/expenses", (req, res) => {
