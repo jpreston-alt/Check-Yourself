@@ -5,7 +5,7 @@ $(document).ready(() => {
   let leftoverBudget;
 
   $("#submit-expense-btn").on("click", addExpense);
-  $("delete-expense-btn").on("click", deleteExpense);
+  $(".delete-expense-btn").on("click", deleteExpense);
 
   displayChart();
 
@@ -60,6 +60,7 @@ $(document).ready(() => {
   // eslint-disable-next-line no-unused-vars
   function deleteExpense() {
     const expenseId = $(this).data("expenseid");
+    console.log("deleted");
     $.ajax(`/api/expenses/${expenseId}`, {
       type: "DELETE"
     }).then(data => {
