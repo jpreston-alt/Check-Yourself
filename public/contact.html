@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/contactabout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 
 <body id="contact">
     <div class="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="#"><img id="logo-img" src="./images/checkyourself.JPG"></a>
+        <a class="navbar-brand" href="login.html"><img id="logo-img" src="images/checkyourself.JPG"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,14 +44,11 @@
 
         <h1>Contact Us</h1>
 
-        <div class="container">
+        <div class="container" id="contact-form">
             <form action="action_page.php">
           
-              <label for="fname">First Name</label>
+              <label for="fname">Name</label>
               <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
           
               <label for="lname">Email</label>
               <input type="text" id="lname" name="lastname" placeholder="Your last name..">
@@ -59,13 +57,18 @@
               <input type="text" id="lname" name="lastname" placeholder="Your last name..">
           
               <label for="subject">Message</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
           
               <input type="submit" value="Submit">
           
             </form>
           </div>
     </div>
+
+    <footer class="clearfix">
+        <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
+        <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>, <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
+    </footer>
 
 
     <script src="contactabout.js"></script>
