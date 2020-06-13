@@ -35,7 +35,7 @@ module.exports = function(app) {
   });
 
   // budget route loads home.html page
-  app.get("/home", (req, res) => {
+  app.get("/home", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
