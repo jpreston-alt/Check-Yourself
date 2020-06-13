@@ -1,11 +1,9 @@
-form.signup,
-form.login {
-}
+
 
 html, body {
   min-height:100%;
   height: 100%;
-  font-family: Helvetica, Arial, sans-serif;    
+  font-family: 'Muli', sans-serif;
 }
 
 
@@ -31,7 +29,7 @@ h1{
   flex-basis: auto;
 }
 
-.login-form{
+.login-form, .signup-form{
   left: 0%;
   top: 20%;
 }
@@ -53,13 +51,29 @@ h1{
   left: 0%;
   width: 100%;
 }
-footer{
+#landing-footer{
   background-color: black;
   height: 10%;
   margin-top: 15vh;
 }
 
+#accountInf {
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color:black;
+  height: 1000px;
+  color: white;
+}
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -79,7 +93,7 @@ footer{
   html, body {
     min-height:100%;
     height: 100%;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Muli', sans-serif;
     background: url("../images/Landing-Page-2.png") no-repeat;
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
@@ -92,10 +106,6 @@ footer{
   .title-section{
     background: transparent;
   }
-
-  .login-section{
-  }
-
   nav{
     background-color: transparent !important;
   }
@@ -120,7 +130,7 @@ footer{
     top: 82%;
   }
   
-  .login-form{
+  .login-form, .signup-form{
     left: 30%;
     top: 60%;
   }
@@ -159,25 +169,22 @@ footer{
     display: table;
     clear: both;
   }
-.container {
-  height: 100%;
-  width: 100%;
-}
 
-#accountInf {
-  padding-top: 50px;
-  padding-left: 50px;
-  background-color:black;
-  height: 1000px;
-  color: white;
-}
+  #signup {
+    font-family: 'Muli', sans-serif;
+  }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-}
+  #logo-img {
+    height: 70px;
+    width: 220px;
+  }
+
+  #about-tab {
+    font-size: larger;
+    padding-top: 25px;
+  }
+
+  #contact-tab {
+    font-size: larger;
+    padding-top: 25px;
+  }

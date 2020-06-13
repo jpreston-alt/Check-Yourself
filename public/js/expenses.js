@@ -1,6 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-extra-semi */
 $(document).ready(() => {
   let wantsSum;
   let needsSum;
@@ -8,7 +5,7 @@ $(document).ready(() => {
   let leftoverBudget;
 
   $("#submit-expense-btn").on("click", addExpense);
-  $("#delete-expense-btn").on("click", deleteExpenseTest);
+  $("delete-expense-btn").on("click", deleteExpense);
 
   displayChart();
 
@@ -17,9 +14,13 @@ $(document).ready(() => {
     event.preventDefault();
 
     const newExpense = {
-      item: $("#expense-item").val().trim(),
+      item: $("#expense-item")
+        .val()
+        .trim(),
       cost: Number($("#expense-cost").val()),
-      category: $("#choose-category-dropdown option:selected").val().trim()
+      category: $("#choose-category-dropdown option:selected")
+        .val()
+        .trim()
     };
 
     if (
@@ -34,7 +35,7 @@ $(document).ready(() => {
         location.reload();
       });
     }
-  };
+  }
 
   // get expense data - api call
   function getExpenseData(cb) {
@@ -43,40 +44,29 @@ $(document).ready(() => {
     }).then(data => {
       cb(data);
     });
-  };
+  }
 
   // get income data - api call
   function getIncomeData(cb) {
     $.ajax("/api/income", {
-      type: "GET",
+      type: "GET"
     }).then(data => {
       cb(data);
     });
-  };
+  }
 
-  // delete an expense *** only use this for test route ***
-  function deleteExpenseTest() {
-    let expenseId = $("#delete-expense").val().trim();
-    $.ajax(`/api/expenses/${expenseId}`, {
-      type: "DELETE",
-    }).then(data => {
-      console.log(data);
-      location.reload();
-    });
-  };
-
-  // delete an expense 
+  // delete an expense
   // *** use this route in app to delete an expense based on it's data-ID rendered with handlebars ***
   // eslint-disable-next-line no-unused-vars
   function deleteExpense() {
-    let expenseId = $(this).data("expenseid");
+    const expenseId = $(this).data("expenseid");
     $.ajax(`/api/expenses/${expenseId}`, {
-      type: "DELETE",
+      type: "DELETE"
     }).then(data => {
       console.log(data);
       location.reload();
     });
-  };
+  }
 
   // display chart based on expense and income data
   function displayChart() {
@@ -86,7 +76,7 @@ $(document).ready(() => {
         renderPieChart([needsSum, wantsSum, savingsSum, leftoverBudget]);
       });
     });
-  };
+  }
 
   // find the sum of wants, needs, and savings category
   function findCategorySums(arr) {
@@ -102,17 +92,17 @@ $(document).ready(() => {
       } else if (arr[i].category === "savings") {
         savings.push(Number(arr[i].cost));
       }
-    };
+    }
 
     wantsSum = findSum(wants);
     needsSum = findSum(needs);
     savingsSum = findSum(savings);
-  };
+  }
 
   // find leftover budget based on income sum
   function findLeftoverBudget(cb) {
     getIncomeData(data => {
-      let incomes = [];
+      const incomes = [];
 
       data.map(el => incomes.push(Number(el.amount)));
 
@@ -120,7 +110,7 @@ $(document).ready(() => {
       leftoverBudget = totalIncome - (wantsSum + needsSum + savingsSum);
       cb(leftoverBudget);
     });
-  };
+  }
 
   // find sum of categories
   function findSum(arr) {
@@ -129,7 +119,7 @@ $(document).ready(() => {
     }, 0);
 
     return sum;
-  };
+  }
 
   // render pie chart
   function renderPieChart(dataArr) {
@@ -165,6 +155,5 @@ $(document).ready(() => {
         }
       }
     });
-  };
-
+  }
 });

@@ -39,13 +39,13 @@ h1 {
     background-color: black;
     color: white;
     width: 650px;
-    height: 600px;
+    height: 550px;
     float: right;
     padding: 20px;
 }
 
 .budget-icon {
-    height: 300px;
+    height: 255px;
     width: 595px;
     padding: 20px;
 }
@@ -84,4 +84,22 @@ input[type=text], select, textarea {
     color: black;
     background-image: url("https://wallpaperaccess.com/full/296951.jpg");
     font-family: 'Muli', sans-serif;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+.clearfix {
+    overflow: auto;
+  }
+
+#contact-form {
+    height: 605px;
 }

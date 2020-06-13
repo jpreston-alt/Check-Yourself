@@ -1,14 +1,173 @@
-<div class="conatiner">
-    <div class="card text-center" id="menu">
-        <div class="card-header">
-            <h3 class="card-title">Income Amounts</h3>
+  {{!-- <section id = "income-section" class = "title-section col">
+    <nav class="d-block navbar navbar-expand-sm">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">About Us</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+          <a class="nav-item nav-link" href="#">Spending</a>
         </div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                {{#each income}}
-                <li class="list-group-item">${{dataValues.amount}}</li>
-                {{/each}}
-            </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class = "col title title-container">
+            <h1>Your Account Information</h1>
+            <p>Enter Monthly Income:</p>
+            <div class="input-group">
+                <input type="text" id="income-amount" placeholder="Amount">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="submit-income-btn">Submit</button>
+                </div>
+            </div>
+            <p>Total Income: <span id="total-income"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+  </div>
+
+  <section class = "info-section col">
+    <div class="container">
+        <div class="row">
+            <canvas id="goalChart"></canvas>
+        </div>
+
+        <div class = "row">
+            <div class="card text-center" id="menu">
+                <div class="card-header">
+                    <h3 class="card-title">Your Income</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each income}}
+                        <li class="list-group-item">${{dataValues.amount}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Primary Needs Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>   
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Wants Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>          
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Savings Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                </div>
+            </div>            
         </div>
     </div>
-</div>
+  </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../public/chart-test/income-chart.js"></script>
+
+ --}}
+
+
+
+<body id="about">
+    <div class="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-names" href="home.html">Budget</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-names" href="#">Spending</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col income" id="accountInf">
+
+                <h1>Your Account Information</h1>
+                <br>
+
+                <form id="income-form">
+                    <td>
+                        <input placeholder="Enter your income" id="income-amount" type="text" />
+                    </td>
+                    <td><button id = "submit-income-btn" type="submit" class="btn btn-light">Submit Income</button>
+                    </td>
+                </form>
+            </div>
+        </div>
+        <div class="col chart">
+            <h1><span class="member-name"></span>, this is your recommended monthly budget plan:</h1>
+            <br>
+            <canvas id="goalChart"></canvas>
+
+            <div class="section" id="overviewBalance">
+                <h2>Overview</h2>
+                <div>
+                    <div id ="needs-val" class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Primary Needs Balance</div>
+                        <div class="card-body">
+                            <span id ="needs-val" class="card-title"></span>
+                        </div>
+                    </div>   
+                    <div  class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Wants Balance</div>
+                        <div class="card-body">
+                            <h5 id ="wants-val" class="card-title">{{wants}}</h5>
+                        </div>
+                    </div>          
+                    <div  class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Savings Balance</div>
+                        <div class="card-body">
+                            <h5 id = "savings-val" class="card-title">{{savings}}</h5>
+                        </div>
+                    </div>            
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>copyright</p>
+    </div>
+
+</body>
+
