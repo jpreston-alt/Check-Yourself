@@ -3,7 +3,7 @@
 html, body {
   min-height:100%;
   height: 100%;
-  font-family: Helvetica, Arial, sans-serif;    
+  font-family: 'Muli', sans-serif;
 }
 
 
@@ -93,7 +93,7 @@ h1{
   html, body {
     min-height:100%;
     height: 100%;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Muli', sans-serif;
     background: url("../images/Landing-Page-2.png") no-repeat;
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
@@ -168,14 +168,8 @@ h1{
     content: "";
     display: table;
     clear: both;
-<<<<<<< HEAD
   }
-.container {
-  height: 100%;
-  width: 100%;
-}
 
-}
-=======
+  #signup {
+    font-family: 'Muli', sans-serif;
   }
->>>>>>> homepage
