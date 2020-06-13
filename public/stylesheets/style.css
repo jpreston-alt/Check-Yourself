@@ -173,3 +173,18 @@ h1{
   #signup {
     font-family: 'Muli', sans-serif;
   }
+
+  #logo-img {
+    height: 70px;
+    width: 220px;
+  }
+
+  #about-tab {
+    font-size: larger;
+    padding-top: 25px;
+  }
+
+  #contact-tab {
+    font-size: larger;
+    padding-top: 25px;
+  }
