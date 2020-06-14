@@ -9,11 +9,9 @@ $(document).ready(() => {
 
     const income = Number($("#income-amount").val());
 
+    //set the 'amount' row from databse to income's value
     const newIncome = {
-      amount: income,
-      needs: income * 0.5,
-      wants: income * 0.3,
-      savings: income * 0.2
+      amount: income
     };
     $("#needs-val").val(parseInt(income * 0.5));
     console.log(income * 0.5);

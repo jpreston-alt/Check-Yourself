@@ -1,7 +1,6 @@
 <link href="stylesheets/expenses.css" rel="stylesheet">
 <script src="/js/expenses.js"></script>
 
-<body id="about">
     <div class="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
@@ -69,7 +68,7 @@
                                     <td scope="col">{{dataValues.item}}</td>
                                     <td scope="col">${{dataValues.cost}}</td>
                                     <td scope="col">{{dataValues.category}}</td>
-                                    <td scope="col"><button class="delete-expense-btn btn btn-outline-secondary" data-expenseID={{dataValues.id}}>X</button>
+                                    <td scope="col"><button class="delete-expense-btn btn btn-outline-secondary" data-expenseid={{dataValues.id}}>X</button>
                                     </td>
                                 </tr>
                                 {{/each}}

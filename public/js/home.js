@@ -50,6 +50,7 @@ $(document).ready(() => {
     getIncomeData(data => {
       const incomes = [];
 
+      // eslint-disable-next-line array-callback-return
       data.map(el => {
         incomes.push(Number(el.amount));
       });

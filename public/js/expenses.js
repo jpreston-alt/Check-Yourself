@@ -55,24 +55,12 @@ $(document).ready(() => {
     });
   }
 
-  // delete an expense *** only use this for test route ***
-  function deleteExpenseTest() {
-    const expenseId = $("#delete-expense")
-      .val()
-      .trim();
-    $.ajax(`/api/expenses/${expenseId}`, {
-      type: "DELETE"
-    }).then(data => {
-      console.log(data);
-      location.reload();
-    });
-  }
-
   // delete an expense
   // *** use this route in app to delete an expense based on it's data-ID rendered with handlebars ***
   // eslint-disable-next-line no-unused-vars
   function deleteExpense() {
     const expenseId = $(this).data("expenseid");
+    console.log("deleted");
     $.ajax(`/api/expenses/${expenseId}`, {
       type: "DELETE"
     }).then(data => {
