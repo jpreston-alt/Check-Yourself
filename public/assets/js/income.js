@@ -25,7 +25,7 @@ $(document).ready(() => {
         data: newIncome
       }).then(data => {
         console.log(data);
-
+        location.reload();
       });
     }
   }
