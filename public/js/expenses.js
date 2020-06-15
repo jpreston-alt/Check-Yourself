@@ -3,11 +3,12 @@ $(document).ready(() => {
   let needsSum;
   let savingsSum;
   let leftoverBudget;
+  let totalIncome;
 
   $("#submit-expense-btn").on("click", addExpense);
   $(".delete-expense-btn").on("click", deleteExpense);
 
-  displayChart();
+  renderPage();
 
   // post expense api call
   function addExpense(event) {
@@ -56,7 +57,6 @@ $(document).ready(() => {
   }
 
   // delete an expense
-  // *** use this route in app to delete an expense based on it's data-ID rendered with handlebars ***
   // eslint-disable-next-line no-unused-vars
   function deleteExpense() {
     const expenseId = $(this).data("expenseid");
@@ -70,11 +70,25 @@ $(document).ready(() => {
   }
 
   // display chart based on expense and income data
-  function displayChart() {
+  function renderPage() {
     getExpenseData(data => {
       findCategorySums(data);
       findLeftoverBudget(leftoverBudget => {
-        renderPieChart([needsSum, wantsSum, savingsSum, leftoverBudget]);
+        let dataArr;
+        console.log(leftoverBudget);
+
+        if (leftoverBudget < 0) {
+          dataArr = [needsSum, wantsSum, savingsSum];
+        } else {
+          dataArr = [needsSum, wantsSum, savingsSum, leftoverBudget];
+        }
+
+        renderPieChart(dataArr);
+        $("#needs-balance").text(`$${needsSum}`);
+        $("#wants-balance").text(`$${wantsSum}`);
+        $("#savings-balance").text(`$${savingsSum}`);
+        $("#leftover-budget").text(`$${leftoverBudget}`);
+        calcGoals(totalIncome);
       });
     });
   }
@@ -108,9 +122,19 @@ $(document).ready(() => {
       data.map(el => incomes.push(Number(el.amount)));
 
       totalIncome = findSum(incomes);
+      $("#total-budget").text(`$${totalIncome}`);
       leftoverBudget = totalIncome - (wantsSum + needsSum + savingsSum);
       cb(leftoverBudget);
     });
+  }
+
+  function calcGoals(totalInc) {
+    const wantsGoal = totalInc * 0.3;
+    const needsGoal = totalInc * 0.5;
+    const savingsGoal = totalInc * 0.3;
+    $("#goal-wants").text(`$${wantsGoal}`);
+    $("#goal-needs").text(`$${needsGoal}`);
+    $("#goal-savings").text(`$${savingsGoal}`);
   }
 
   // find sum of categories
@@ -135,7 +159,7 @@ $(document).ready(() => {
           {
             label: "Categories",
             data: dataArr,
-            backgroundColor: ["#07456f", "#009f9d", "#cdffeb", "#0f0a3c"],
+            backgroundColor: ["#037bfe", "#dd3444", "#28a745", "#333b3f"],
             borderWidth: 1,
             borderColor: "white",
             hoverBorderWidth: 3
@@ -143,11 +167,11 @@ $(document).ready(() => {
         ]
       },
       options: {
-        title: {
-          display: true,
-          text: "Monthly Expenses",
-          fontSize: 25
-        },
+        // title: {
+        //   display: true,
+        //   text: "Monthly Expenses",
+        //   fontSize: 25
+        // },
         legend: {
           display: true,
           labels: {
