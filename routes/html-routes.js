@@ -30,10 +30,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/home", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
-
   // budget route loads home.html page
   app.get("/home", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/home.html"));
@@ -43,9 +39,13 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/about.html"));
   });
 
+  app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/contact.html"));
+  });
+
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //
   // switch route name "/expenses" for spending page route name
-  app.get("/expenses", (req, res) => {
+  app.get("/expenses", isAuthenticated, (req, res) => {
     db.Expense.findAll({
       where: {
         UserId: req.user.id

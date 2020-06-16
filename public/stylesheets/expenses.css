@@ -1,4 +1,106 @@
-  .nav-bar {
-    /* background-color: black; */
+body, html {
+    min-height: 687px;
+    font-family: 'Muli', sans-serif; 
+}
+
+.nav-bar {
+    background-color: black;
     color: white;
+}
+
+.navbar-toggler-icon, .navbar-toggler {
+    color: white !important;
+    background-color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+#logo-img {
+  height: 60px;
+  width: 200px;
+}
+
+.black-col {
+    background-color: black;
+    color: white;
+    min-height: 687px;
+}
+
+.container-fluid, .full-height-row {
+    height: 100%;
+}
+
+i {
+    font-size: 22px;
+    color: white;
+}
+
+i:hover {
+    font-size: 24px;
+    color: #dd3444 !important;
+}
+
+.wants {
+    color: #dd3444;
+    text-transform: capitalize;
+}
+
+.needs {
+    color: #037bfe;
+    text-transform: capitalize;
+}
+
+.savings {
+    color: #28a745;
+    text-transform: capitalize;
+}
+
+.goal {
+    font-weight: bold;
+}
+
+.goal-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-expense-card {
+    background: none;
+    border: 1px solid white;
+}
+
+.expense-table-row {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+#submit-expense-btn {
+    color: white;
+    border-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submit-expense-btn:hover {
+    background-color: #28a745;
+    border: none;
+    font-size: 18px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-bar {
+    width: 50%;
+  }
 }

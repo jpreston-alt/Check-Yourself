@@ -1,130 +1,148 @@
 <link href="stylesheets/expenses.css" rel="stylesheet">
 <script src="/js/expenses.js"></script>
 
-    <div class="nav-bar">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div class="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="nav-names" href="about.html">About<span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item text-white">
-                        <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-names" href="home.html">Budget</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-names" href="#">Spending</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item text-white">
+                    <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-names" href="/home">Budget</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
-    <div class="container" style="width: 100%;">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h3>Add an Expense:</h3>
-                            <div class="input-group">
-                                <input type="text" id="expense-item" placeholder="item">
-                                <input type="text" id="expense-cost" placeholder="cost">
-                                <div class="input-group-append" id="choose-category-group">
-                                    <select class="custom-select" id="choose-category-dropdown">
-                                        <option selected>Category...</option>
-                                        <option value="wants">Wants</option>
-                                        <option value="needs">Needs</option>
-                                        <option value="savings">Savings</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="submit-expense-btn">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
+<div class="container-fluid">
+    <div class="row full-height-row">
+        <div class="col-12 col-md-6 black-col">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center" style="padding-top: 30px">
+                            <h3>Add an Expense</h3>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <h3>Your Monthly Spending</h1>
-                            <table class="table">
-                                <tr>
-                                    <th scope="col">Item</th>
-                                    <th scope="col">Cost</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                                {{#each expense}}
-                                <tr>
-                                    <td scope="col">{{dataValues.item}}</td>
-                                    <td scope="col">${{dataValues.cost}}</td>
-                                    <td scope="col">{{dataValues.category}}</td>
-                                    <td scope="col"><button class="delete-expense-btn btn btn-outline-secondary" data-expenseid={{dataValues.id}}>X</button>
-                                    </td>
-                                </tr>
-                                {{/each}}
-                            </table>
+                        <div class="card add-expense-card">
+                            <div class="card-body text-center">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" id="expense-item" placeholder="Expense" class="form-control">
+                                    </div>
+                                    <div class="form-group form-row">
+                                        <div class="col">
+                                            <label class="sr-only" for="inlineFormInputGroup">Cost</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">$</div>
+                                                </div>
+                                                <input type="text" class="form-control" id="expense-cost" placeholder="Cost">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <select class="custom-select" id="choose-category-dropdown">
+                                                <option selected>Category...</option>
+                                                <option value="wants">Wants</option>
+                                                <option value="needs">Needs</option>
+                                                <option value="savings">Savings</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" id="submit-expense-btn">Add <span style="font-size: 20px">+</span></button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h3>Spending at a Glance</h3>
+                <div class="row expense-table-row">
+                    <div class="col">
+                        <div class="text-center">
+                            <h3>Monthly Expenses</h3>
                         </div>
+                        <table class="table table-bordered text-white text-center expenses-table rounded">
+                            {{#each expense}}
+                            <tr>
+                                <td scope="col">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <button class="delete-expense-btn btn" data-expenseid={{dataValues.id}}><i class="far fa-times-circle"></i></button>
+                                        </div>
+                                        <div class="col-9" style="margin-top: 7px">
+                                            {{dataValues.item}}
+                                        </div>
+                                    </div>
+                                </td>
+                                <td scope="col" class="align-middle {{dataValues.category}}">{{dataValues.category}}</td>
+                                <td scope="col" class="align-middle">${{dataValues.cost}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="container">
+                <div class="text-center" style="padding-top: 30px">
+                    <h2>Spending at a Glance</h2>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="chart-container">
                             <canvas id="actualChart"></canvas>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-header">
-                                    Primary Needs Spending
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">$2000</h5>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    Wants Spending
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">$2000</h5>
-                                </div>
+                </div>
+                <div class="row" style="margin-top: 40px; margin-bottom: 40px">
+                    <div class="col-12 col-md-6">
+                        <div class="card text-center text-white bg-primary mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card-header">Primary Needs Spending</div>
+                            <div class="card-body">
+                                <h5 class="card-title goal" id="needs-balance"></h5>
+                                <p>Goal: <span id="goal-needs"></span></p>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-header">
-                                    Savings
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">$2000</h5>
-                                </div>
+                        <div class="card text-center text-white bg-danger mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card-header">Wants Spending</div>
+                            <div class="card-body">
+                                <h5 class="card-title goal" id="wants-balance"></h5>
+                                <p>Goal: <span id="goal-wants"></span></p>
                             </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    Leftover Budget
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">$2000</h5>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card text-center text-white bg-success mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card-header">Savings Spending</div>
+                            <div class="card-body">
+                                <h5 class="card-title goal" id="savings-balance"></h5>
+                                <p>Goal: <span id="goal-savings"></span></p>
+                            </div>
+                        </div>
+                        <div class="card text-center text-white bg-dark mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card-header">Leftover Budget</div>
+                            <div class="card-body">
+                                <h5 class="card-title goal" id="leftover-budget"></h5>
+                                <p>Total: <span id="total-budget"></span></p>
                             </div>
                         </div>
                     </div>
@@ -132,3 +150,12 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <footer>
+            <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
+            <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>,
+                <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna
+                    Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
+        </footer>
+    </div>
+</div>
