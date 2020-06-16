@@ -10,8 +10,8 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/home");
-      console.log(req.user);
+      return res.redirect("/home");
+      // console.log(req.user);
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/home");
+      return res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -28,10 +28,6 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
-  });
-
-  app.get("/home", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   // budget route loads home.html page
@@ -43,9 +39,13 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/about.html"));
   });
 
+  app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/contact.html"));
+  });
+
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //
   // switch route name "/expenses" for spending page route name
-  app.get("/expenses", (req, res) => {
+  app.get("/expenses", isAuthenticated, (req, res) => {
     db.Expense.findAll({
       where: {
         UserId: req.user.id
