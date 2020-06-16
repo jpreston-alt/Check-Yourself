@@ -25,6 +25,14 @@ $(document).ready(() => {
       });
     }
   }
+  function calcBalance(totalIncome) {
+    const needsGoal = totalIncome * 0.5;
+    const wantsGoal = totalIncome * 0.3;
+    const savingsGoal = totalIncome * 0.2;
+    $("#needs-val").text(`$${needsGoal}`);
+    $("#wants-val").text(`$${wantsGoal}`);
+    $("#savings-val").text(`$${savingsGoal}`);
+  }
 
   // get income data - api call
   function getIncomeData(cb) {
@@ -58,6 +66,7 @@ $(document).ready(() => {
       totalIncome = findSum(incomes);
       $("#total-income").text(totalIncome);
       calcIncPercentages(totalIncome);
+      calcBalance(totalIncome);
     });
   }
 
