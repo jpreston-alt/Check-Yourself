@@ -10,8 +10,8 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/home");
-      console.log(req.user);
+      return res.redirect("/home");
+      // console.log(req.user);
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/home");
+      return res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
