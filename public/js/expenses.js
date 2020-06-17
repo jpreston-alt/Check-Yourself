@@ -137,7 +137,7 @@ $(document).ready(() => {
   function calcGoals(totalInc) {
     const wantsGoal = totalInc * 0.3;
     const needsGoal = totalInc * 0.5;
-    const savingsGoal = totalInc * 0.3;
+    const savingsGoal = totalInc * 0.2;
     $("#goal-wants").text(`$${wantsGoal}`);
     $("#goal-needs").text(`$${needsGoal}`);
     $("#goal-savings").text(`$${savingsGoal}`);
