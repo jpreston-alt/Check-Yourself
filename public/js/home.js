@@ -11,7 +11,8 @@ $(document).ready(() => {
     $.ajax("/api/user_data", {
       type: "GET"
     }).then(data => {
-      $("#name").text(data.email);
+      const userName = data.email.match(/^([^@]*)@/)[1];
+      $("#name").text(userName);
     });
   }
 
@@ -119,11 +120,6 @@ $(document).ready(() => {
         ]
       },
       options: {
-        title: {
-          display: true,
-          text: "Suggested Monthly Spending",
-          fontSize: 25
-        },
         legend: {
           display: true,
           labels: {

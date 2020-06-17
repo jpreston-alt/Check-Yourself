@@ -1,10 +1,11 @@
 $(document).ready(() => {
+  //get suggested spending from budget page
   const userTotalIncome = localStorage.getItem("userTotalIncome");
   const needsPerc = userTotalIncome * 0.5;
   const wantsPerc = userTotalIncome * 0.3;
   const savingsPerc = userTotalIncome * 0.2;
 
-  //   const userTotalExpenses = localStorage.getItem("userTotalExpenses");
+  //get actual spending from spending page
   const wantsSum = localStorage.getItem("userTotalWants");
   const needsSum = localStorage.getItem("userTotalNeeds");
   const savingsSum = localStorage.getItem("userTotalSavings");
@@ -36,7 +37,6 @@ $(document).ready(() => {
         ],
         datasets: [
           {
-            label: "Actual to Plan",
             data: dataArr,
             backgroundColor: [
               "#07456F",
