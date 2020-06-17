@@ -64,7 +64,7 @@ $(document).ready(() => {
       });
 
       totalIncome = findSum(incomes);
-      $("#total-income").text(totalIncome);
+      $("#total-income").text(` $${totalIncome}`);
       calcIncPercentages(totalIncome);
       calcBalance(totalIncome);
     });

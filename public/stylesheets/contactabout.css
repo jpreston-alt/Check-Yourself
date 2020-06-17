@@ -1,3 +1,12 @@
+html, body {
+  height: 100%;
+  font-family: 'Muli', sans-serif; 
+  box-sizing: border-box;
+}
+
+
+
+
 .inner-text {
     background-color: white;
     padding: 20px;
@@ -10,12 +19,17 @@
 }
 
 .nav-bar {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
-#nav-names {
-    color: white;
+.navbar-toggler-icon, .navbar-toggler {
+  color: white !important;
+  background-color: white;
+}
+
+.nav-link {
+  color: white !important;
 }
 
 #logo-img {
@@ -29,11 +43,10 @@ h1 {
 
 #white-square {
     background-color: white;
-    width: 700px;
-    height: 700px;
     float: right;
     padding: 20px;
-  }
+    border: 2px solid black
+}
 
 #black-square {
     background-color: black;
@@ -74,7 +87,7 @@ input[type=text], select, textarea {
     background-color: #45a049;
   }
 
-  .container {
+  .form-container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -86,16 +99,6 @@ input[type=text], select, textarea {
     font-family: 'Muli', sans-serif;
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-
 .clearfix {
     overflow: auto;
   }
@@ -103,3 +106,25 @@ footer {
 #contact-form {
     height: 605px;
 }
+
+footer {
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+}
+
+@media only screen and (min-width: 768px) {
+  footer{
+    bottom: 0;
+  }
+
+  #white-square{
+    width: 700px;
+    height: 700px;
+  }
+}
+  
