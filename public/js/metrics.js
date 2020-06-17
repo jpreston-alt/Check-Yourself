@@ -22,6 +22,7 @@ $(document).ready(() => {
   function renderBarChart(dataArr) {
     const incomeChart = $("#myBarChart");
 
+    // eslint-disable-next-line no-unused-vars
     const expensesBarChart = new Chart(incomeChart, {
       type: "bar", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data: {
