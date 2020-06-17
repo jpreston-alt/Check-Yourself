@@ -6,6 +6,24 @@ html, body {
   font-family: 'Muli', sans-serif;
 }
 
+.nav-bar {
+  background-color: black;
+  color: white;
+}
+
+.navbar-toggler-icon, .navbar-toggler {
+  color: white !important;
+  background-color: white;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo-img {
+  height: 60px;
+  width: 200px;
+}
 
 .title-section{
   background: url("../images/Group-5.png") no-repeat center;
@@ -17,6 +35,11 @@ html, body {
   text-align: center;
 }
 
+.center-block {
+  display: table;  /* Instead of display:block */
+  margin-left: auto;
+  margin-right: auto;
+}
 
 h1{
   font-size: 10vw;
@@ -45,34 +68,16 @@ h1{
   color: rgba(197, 197, 197, 1);
 }
 
-.title{
-  position: relative;
-  top: 20%;
-  left: 0%;
-  width: 100%;
-}
-#landing-footer{
-  background-color: black;
-  height: 10%;
-  margin-top: 15vh;
-}
 
-#accountInf {
-  padding-top: 50px;
-  padding-left: 50px;
-  background-color:black;
-  height: 1000px;
-  color: white;
-}
-
-.footer {
-  position: fixed;
+footer {
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: black;
   color: white;
   text-align: center;
+  padding: 10px;
+  margin-top: 4rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -93,15 +98,20 @@ h1{
   html, body {
     min-height:100%;
     height: 100%;
+    width: 100%;
     font-family: 'Muli', sans-serif;
-    background: url("../images/Landing-Page-2.png") no-repeat;
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -ms-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: contain;
-    
+    background: url("../images/Landing-Page-3.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
   }
+
+  .nav-bar {
+    background-color: transparent;
+    color: white;
+  }
+  
 
   .title-section{
     background: transparent;
@@ -114,10 +124,6 @@ h1{
     margin-right: 60px;;
   }
   
-  .navbar-nav a {
-    color: white;
-  }
-
   .col{
     float: left;
     width: 50%;
@@ -125,16 +131,14 @@ h1{
   }
   
   
-  .title{
-    position: relative;
-    top: 82%;
+  .login{
+  }
+
+  .middle{
+    margin-top:8rem;
   }
   
-  .login-form, .signup-form{
-    left: 30%;
-    top: 60%;
-  }
-  
+
 
   #login-title{
     font-size: 72px;
