@@ -43,6 +43,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/contact.html"));
   });
 
+  app.get("/metrics", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/metrics.html"));
+  });
+
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //
   // switch route name "/expenses" for spending page route name
   app.get("/expenses", isAuthenticated, (req, res) => {
