@@ -1,6 +1,9 @@
 $(document).ready(() => {
   let totalIncome;
 
+  const userName = localStorage.getItem("emailInput");
+  $("#name").text(userName);
+
   displayChart();
 
   $("#submit-income").on("click", postIncome);
@@ -67,6 +70,7 @@ $(document).ready(() => {
       $("#total-income").text(totalIncome);
       calcIncPercentages(totalIncome);
       calcBalance(totalIncome);
+      localStorage.setItem("userTotalIncome", totalIncome);
     });
   }
 
