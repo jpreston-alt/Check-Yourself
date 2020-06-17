@@ -8,7 +8,6 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <link href="stylesheets/homepage.css" rel="stylesheet">
-    <!-- <link href="stylesheets/contactabout.css" rel="stylesheet"> -->
 
     <link href="stylesheets/homepage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
@@ -39,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-names" href="/metrics">Dashboard</a>
+                      </li>
                     <li>
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>
@@ -83,7 +85,8 @@
             <div class="col-12 col-md-6">
                 <div class="container">
                     <div class="text-center" style="padding-top: 30px">
-                        <h2>XXX, this is your recommended monthly budget plan:</h2>
+                        <h2 id="name">XXX</h2>
+                        <h2>This is your recommended monthly budget:</h2>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -92,18 +95,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class = "text-center">
+                    <div class = "text-center" style="padding-top: 40px">
                         <h2 class = "overview-title">Overview</h2>
                     </div>
                     <div class="row" style="margin-top: 40px; margin-bottom: 40px">
                         <div class="col-12 col-md-6">
-                            <div class="card text-center text-white bg-primary mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card text-center text-white mb-3 goal-card" style="max-width: 18rem;" id="needs-card">
                                 <div class="card-header">Primary Need Balance</div>
                                 <div class="card-body">
                                     <h5 id ="needs-val" class="card-title"></h5>
                                 </div>
                             </div>
-                            <div class="card text-center text-white bg-danger mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card text-center text-white mb-3 goal-card" style="max-width: 18rem;" id="wants-card">
                                 <div class="card-header">Wants Balance</div>
                                 <div class="card-body">
                                     <h5 id ="wants-val" class="card-title"></h5>
@@ -111,7 +114,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="card text-center text-white bg-success mb-3 goal-card" style="max-width: 18rem;">
+                            <div class="card text-center text-white mb-3 goal-card" style="max-width: 18rem;" id="savings-card">
                                 <div class="card-header">Savings Balance</div>
                                 <div class="card-body">
                                     <h5 id = "savings-val" class="card-title"></h5>
@@ -134,10 +137,6 @@
         
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous">

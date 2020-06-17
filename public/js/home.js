@@ -2,9 +2,19 @@ $(document).ready(() => {
   let totalIncome;
 
   displayChart();
+  getUserEmail();
 
   $("#submit-income").on("click", postIncome);
   $("#clear-income").on("click", deleteIncome);
+
+  function getUserEmail() {
+    $.ajax("/api/user_data", {
+      type: "GET"
+    }).then(data => {
+      const userName = data.email.match(/^([^@]*)@/)[1];
+      $("#name").text(userName);
+    });
+  }
 
   // post income api call
   function postIncome(event) {
@@ -67,6 +77,7 @@ $(document).ready(() => {
       $("#total-income").text(` $${totalIncome}`);
       calcIncPercentages(totalIncome);
       calcBalance(totalIncome);
+      localStorage.setItem("userTotalIncome", totalIncome);
     });
   }
 
@@ -101,7 +112,7 @@ $(document).ready(() => {
           {
             label: "Categories",
             data: dataArr,
-            backgroundColor: ["#07456f", "#009f9d", "#cdffeb", "#0f0a3c"],
+            backgroundColor: ["#6a2c70", "#f08a5d", "#b83b5e"],
             borderWidth: 1,
             borderColor: "white",
             hoverBorderWidth: 3
@@ -110,7 +121,7 @@ $(document).ready(() => {
       },
       options: {
         title: {
-          display: true,
+          display: false,
           text: "Suggested Monthly Spending",
           fontSize: 25
         },
