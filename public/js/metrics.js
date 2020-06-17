@@ -38,15 +38,12 @@ $(document).ready(() => {
             label: "Actual to Plan",
             data: dataArr,
             backgroundColor: [
-              "#07456f",
-              "yellow",
-              "#07456f",
-              "#009f9d",
-              "yellow",
-              "black",
-              "#cdffeb",
-              "red",
-              "#0f0a3c"
+              "#07456F",
+              "#037BFE",
+              "#009F9D",
+              "#DD3444",
+              "#CDFFEB",
+              "#28A745"
             ],
             borderWidth: 1,
             borderColor: "white",
