@@ -108,6 +108,18 @@ footer {
   padding: 10px;
 }
 
+#needs-card {
+  background-color: #6a2c70;
+}
+
+#wants-card {
+  background-color: #f08a5d;
+}
+
+#savings-card {
+  background-color: #b83b5e;
+}
+
 @media only screen and (min-width: 768px) {
 .nav-bar {
   width: 50%;

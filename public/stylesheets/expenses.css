@@ -43,27 +43,45 @@ i:hover {
 }
 
 .wants {
-    color: #dd3444;
-    text-transform: capitalize;
+    color: #f08a5d;
 }
 
 .needs {
-    color: #037bfe;
-    text-transform: capitalize;
+    color: #6a2c70;
 }
 
 .savings {
-    color: #28a745;
-    text-transform: capitalize;
+    color: #b83b5e;
 }
 
 .goal {
     font-weight: bold;
 }
 
+.needs, .savings, .wants {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
 .goal-card {
     margin-left: auto;
     margin-right: auto;
+}
+
+#needs-card {
+    background-color: #6a2c70;
+}
+
+#wants-card {
+    background-color: #f08a5d;
+}
+
+#savings-card {
+    background-color: #b83b5e;
+}
+
+#leftover-card {
+    background-color: #ffc933;
 }
 
 .add-expense-card {
@@ -77,16 +95,17 @@ i:hover {
 }
 
 #submit-expense-btn {
-    color: white;
-    border-color: white;
+    font-size: 18px;
+    color: black;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
 }
 
 #submit-expense-btn:hover {
-    background-color: #28a745;
-    border: none;
-    font-size: 18px;
+    background-color: #ffc933;
+    color: white;
+    font-size: 20px;
 }
 
 footer {
