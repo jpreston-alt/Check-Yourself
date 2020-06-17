@@ -22,6 +22,7 @@ $(document).ready(() => {
   function renderBarChart(dataArr) {
     const incomeChart = $("#myBarChart");
 
+    // eslint-disable-next-line no-unused-vars
     const expensesBarChart = new Chart(incomeChart, {
       type: "bar", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data: {
@@ -38,12 +39,12 @@ $(document).ready(() => {
             label: "Actual to Plan",
             data: dataArr,
             backgroundColor: [
-              "#07456f",
-              "#037bfe",
-              "#009f9d",
-              "#dd3444",
-              "#cdffeb",
-              "#28a745"
+              "#07456F",
+              "#037BFE",
+              "#009F9D",
+              "#DD3444",
+              "#CDFFEB",
+              "#28A745"
             ],
             borderWidth: 1,
             borderColor: "white",
