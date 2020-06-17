@@ -1,13 +1,19 @@
 $(document).ready(() => {
   let totalIncome;
 
-  const userName = localStorage.getItem("emailInput");
-  $("#name").text(userName);
-
   displayChart();
+  getUserEmail();
 
   $("#submit-income").on("click", postIncome);
   $("#clear-income").on("click", deleteIncome);
+
+  function getUserEmail() {
+    $.ajax("/api/user_data", {
+      type: "GET"
+    }).then(data => {
+      $("#name").text(data.email);
+    });
+  }
 
   // post income api call
   function postIncome(event) {
