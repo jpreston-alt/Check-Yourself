@@ -89,8 +89,6 @@ $(document).ready(() => {
         $("#savings-balance").text(`$${savingsSum}`);
         $("#leftover-budget").text(`$${leftoverBudget}`);
         calcGoals(totalIncome);
-
-        // localStorage.setItem("userTotalExpenses", needsSum, wantsSum, savingsSum);
       });
     });
   }
@@ -173,11 +171,6 @@ $(document).ready(() => {
         ]
       },
       options: {
-        // title: {
-        //   display: true,
-        //   text: "Monthly Expenses",
-        //   fontSize: 25
-        // },
         legend: {
           display: true,
           labels: {
