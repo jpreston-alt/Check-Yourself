@@ -29,6 +29,7 @@ html, body {
   background: url("../images/Group-5.png") no-repeat center;
   background-size: cover;
   height: 60%;
+  margin-bottom: 4rem;
 }
 
 .title-container{
@@ -57,7 +58,7 @@ h1{
   top: 20%;
 }
 
-#login-title {
+#login-title, #signup-title {
   font-size: 10vw;
   font-weight: 550;
   text-align: center;
@@ -131,16 +132,13 @@ footer {
   }
   
   
-  .login{
-  }
-
   .middle{
     margin-top:8rem;
   }
   
 
 
-  #login-title{
+  #login-title, #signup-title{
     font-size: 72px;
     font-weight: 550;
   }
