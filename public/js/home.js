@@ -26,12 +26,12 @@ $(document).ready(() => {
     }
   }
   function calcBalance(totalIncome) {
-    const needsGoal = totalIncome * 0.5;
-    const wantsGoal = totalIncome * 0.3;
-    const savingsGoal = totalIncome * 0.2;
-    $("#needs-val").text(`$${needsGoal}`);
-    $("#wants-val").text(`$${wantsGoal}`);
-    $("#savings-val").text(`$${savingsGoal}`);
+    const needs = totalIncome * 0.5;
+    const wants = totalIncome * 0.3;
+    const savings = totalIncome * 0.2;
+    $("#needs-val").text(`$${needs}`);
+    $("#wants-val").text(`$${wants}`);
+    $("#savings-val").text(`$${savings}`);
   }
 
   // get income data - api call
