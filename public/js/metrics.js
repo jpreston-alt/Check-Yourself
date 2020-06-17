@@ -39,12 +39,13 @@ $(document).ready(() => {
           {
             data: dataArr,
             backgroundColor: [
-              "#07456F",
-              "#037BFE",
-              "#009F9D",
-              "#DD3444",
-              "#CDFFEB",
-              "#28A745"
+              "#a168a7",
+              "#711a79",
+              "#f0b398",
+              "#f16529",
+              "#ec8ca7",
+              "#be1444",
+              "#ffc933"
             ],
             borderWidth: 1,
             borderColor: "white",

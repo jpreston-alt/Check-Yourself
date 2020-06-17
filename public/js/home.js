@@ -112,7 +112,7 @@ $(document).ready(() => {
           {
             label: "Categories",
             data: dataArr,
-            backgroundColor: ["#07456f", "#009f9d", "#cdffeb", "#0f0a3c"],
+            backgroundColor: ["#6a2c70", "#f08a5d", "#b83b5e"],
             borderWidth: 1,
             borderColor: "white",
             hoverBorderWidth: 3
@@ -120,6 +120,11 @@ $(document).ready(() => {
         ]
       },
       options: {
+        title: {
+          display: false,
+          text: "Suggested Monthly Spending",
+          fontSize: 25
+        },
         legend: {
           display: true,
           labels: {

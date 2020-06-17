@@ -165,7 +165,7 @@ $(document).ready(() => {
           {
             label: "Categories",
             data: dataArr,
-            backgroundColor: ["#037bfe", "#dd3444", "#28a745", "#333b3f"],
+            backgroundColor: ["#6a2c70", "#f08a5d", "#b83b5e", "#ffc933"],
             borderWidth: 1,
             borderColor: "white",
             hoverBorderWidth: 3
