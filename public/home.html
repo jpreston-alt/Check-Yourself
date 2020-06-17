@@ -16,73 +16,122 @@
     <title>Home</title>
 </head>
 
-<body id="about">
+<body>
     <div class="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="/"><img id="logo-img" src="./images/checkyourself.JPG"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" id="nav-names" href="/about">About<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-names" href="/contact">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/home">Budget</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
-              </li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item text-white">
+                        <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-names" href="/home">Budget</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-
-    <div class="row">
-        <div class="container">
-            <div class="col income" id="accountInf">
-
-                <h1>Your Account Information</h1>
-                <br>
-
-                <form id="income-form">
-                    <td>
-                        <p>Enter Monthly Income:</p>
-                        <input placeholder="" id="income-amount" type="text" />
-                    </td>
-                    <td><button type="submit" class="btn btn-light" id="submit-income">Submit Income</button>
-                    </td>
-                    <p>Total Income: <span id="total-income"></span></p>
-                    <td><button type="clear" class="btn btn-light" id="clear-income">Clear Income</button>
-                    </td>
-                </form>
+    
+    <div class="container-fluid">
+        <div class="row full-height-row">
+            <div class="col-12 col-md-6 black-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center" style="padding-top: 30px">
+                                <h2>Your Account Information</h2>
+                            </div>
+                            <div class="card add-expense-card">
+                                <div class="card-body text-center">
+                                    <form>
+                                        <div class="form-group">
+                                            <p>Enter Your Monthly Income:</p>
+                                            <input type="text" id="income-amount" placeholder="" class="form-control">
+                                            <button type="submit" class="btn btn-light" id="submit-income">Update Income</button>
+                                        </div>
+                                        <div class = "text-center">
+                                            <div class="form-group form-row " id = "total-income-amount">
+                                                Total Income: <span id="total-income"></span>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button type="clear" class="btn btn-light" id="clear-income">Clear Income</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6">
+                <div class="container">
+                    <div class="text-center" style="padding-top: 30px">
+                        <h2>XXX, this is your recommended monthly budget plan:</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="chart-container">
+                                <canvas id="goalChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "text-center">
+                        <h2 class = "overview-title">Overview</h2>
+                    </div>
+                    <div class="row" style="margin-top: 40px; margin-bottom: 40px">
+                        <div class="col-12 col-md-6">
+                            <div class="card text-center text-white bg-primary mb-3 goal-card" style="max-width: 18rem;">
+                                <div class="card-header">Primary Need Balance</div>
+                                <div class="card-body">
+                                    <h5 id ="needs-val" class="card-title"></h5>
+                                </div>
+                            </div>
+                            <div class="card text-center text-white bg-danger mb-3 goal-card" style="max-width: 18rem;">
+                                <div class="card-header">Wants Balance</div>
+                                <div class="card-body">
+                                    <h5 id ="wants-val" class="card-title"></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card text-center text-white bg-success mb-3 goal-card" style="max-width: 18rem;">
+                                <div class="card-header">Savings Balance</div>
+                                <div class="card-body">
+                                    <h5 id = "savings-val" class="card-title"></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col chart">
-            <h1>XXX, this is your recommended monthly budget plan:</h1>
-           
-                <canvas id="goalChart"></canvas>
-            
-            <div class="section" id="overviewBalance">
-                <h2>Overview</h2>
-            </div>
+        <div class="row">
+            <footer>
+                <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
+                <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>,
+                    <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna
+                        Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
+            </footer>
         </div>
     </div>
-
-
-    </div>
-
-    <footer class="clearfix">
-        <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
-        <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>, <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
-    </footer>
-
-
+        
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -91,8 +140,9 @@
         crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-        <script type="text/javascript" src="./js/home.js"></script>
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="./js/home.js"></script>
 
 </body>
 
