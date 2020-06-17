@@ -70,7 +70,7 @@ $(document).ready(() => {
           ]
         },
         legend: {
-          display: true,
+          display: false,
           labels: {
             fontColor: "black"
           }
