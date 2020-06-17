@@ -14,64 +14,88 @@
 </head>
 
 <body id="contact">
-  <div class="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="/"><img id="logo-img" src="images/checkyourself.JPG"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/home">Budget</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
-              </li>
-          </ul>
+    <div class="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item text-white">
+                        <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-names" href="/home">Budget</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row full-height-row">
+            <div class="col-12 col-md-6 offset-md-6">
+                <div class="form-container">
+                  <div class = "row">
+                    <div class = "col">
+                      <div id=white-square class="animate__animated animate__lightSpeedInRight">
+
+                        <h1>Contact Us</h1>
+                  
+                        <div class = "container"id="contact-form">
+                            <form action="action_page.php">
+                          
+                              <label for="fname">Name</label>
+                              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                          
+                              <label for="lname">Email</label>
+                              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  
+                              <label for="lname">Subject</label>
+                              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                          
+                              <label for="subject">Message</label>
+                              <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+                          
+                              <input type="submit" value="Submit">
+                          
+                            </form>
+                        </div>  
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+            </div>
         </div>
-      </nav>
+        <div class="row">
+            <footer>
+                <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
+                <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>,
+                    <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna
+                        Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
+            </footer>
+        </div>
     </div>
 
-    <div id=white-square class="animate__animated animate__lightSpeedInRight">
 
-        <h1>Contact Us</h1>
-
-        <div class="container" id="contact-form">
-            <form action="action_page.php">
-          
-              <label for="fname">Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
-              <label for="lname">Email</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-              <label for="lname">Subject</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          
-              <label for="subject">Message</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
-          
-              <input type="submit" value="Submit">
-          
-            </form>
-          </div>
-    </div>
-
-    <footer class="clearfix">
-        <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
-        <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>, <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
-    </footer>
-
-
-    <script src="contactabout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+     crossorigin="anonymous">
+  </script>
+  <script src="contactabout.js"></script>
 </body>
 
 </html>

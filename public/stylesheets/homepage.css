@@ -9,6 +9,12 @@ html, body {
   color: white;
 }
 
+.metrics-nav-bar{
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
 .navbar-toggler-icon, .navbar-toggler {
   color: white !important;
   background-color: white;
@@ -118,6 +124,10 @@ footer {
 
 #savings-card {
   background-color: #b83b5e;
+}
+
+.metrics-footer{
+  position:absolute;
 }
 
 @media only screen and (min-width: 768px) {
