@@ -12,8 +12,6 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    localStorage.setItem("emailInput", userData.email);
-
     if (!userData.email || !userData.password) {
       return;
     }
