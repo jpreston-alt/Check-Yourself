@@ -12,7 +12,7 @@
     <link href="stylesheets/homepage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <title>Home</title>
+    <title>Dashboard</title>
 </head>
 
 <body id="about">
@@ -46,42 +46,15 @@
     </div>
 
     <div class="row">
-        <div class="container">
-            <div class="col income" id="accountInf">
+        <div class = "col barChart-container" style="position: relative; height:40vh; width:80vw">
+            <div class="col-md-6 col-md-offset-3">
+        
+        <canvas id="myBarChart" width="100" height="70"></canvas>
+          
+    </div> 
+</div> 
+      </div>
 
-                <h1>Your Account Information</h1>
-                <br>
-
-                <form id="income-form">
-                    <td>
-                        <h5>Enter Monthly Income:</h5>
-                        <input placeholder="" id="income-amount" type="text" />
-                    </td>
-                    <td><button type="submit" class="btn btn-light" id="submit-income">Submit Income</button>
-                    </td>
-                    <br>
-                    <br>
-                    <h5>Total Income: <span id="total-income"></span></h5>
-                    <br>
-                    <td><button type="clear" class="btn btn-light" id="clear-income">Clear Income</button>
-                    </td>
-                </form>
-            </div>
-        </div>
-        <div class="col chart">
-          <h1 id="name">XXX</h1>
-            <h1>This is your recommended spending plan:</h1>
-           
-                <canvas id="goalChart"></canvas>
-            
-            <div class="section" id="overviewBalance">
-                <h2>Overview</h2>
-            </div>
-        </div>
-    </div>
-
-
-    </div>
 
     <footer class="clearfix">
         <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
@@ -94,7 +67,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-        <script type="text/javascript" src="./js/home.js"></script>
+        <script type="text/javascript" src="./js/metrics.js"></script>
 
 </body>
 

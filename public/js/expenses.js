@@ -89,6 +89,8 @@ $(document).ready(() => {
         $("#savings-balance").text(`$${savingsSum}`);
         $("#leftover-budget").text(`$${leftoverBudget}`);
         calcGoals(totalIncome);
+
+        // localStorage.setItem("userTotalExpenses", needsSum, wantsSum, savingsSum);
       });
     });
   }
@@ -112,6 +114,10 @@ $(document).ready(() => {
     wantsSum = findSum(wants);
     needsSum = findSum(needs);
     savingsSum = findSum(savings);
+
+    localStorage.setItem("userTotalNeeds", needsSum);
+    localStorage.setItem("userTotalWants", wantsSum);
+    localStorage.setItem("userTotalSavings", savingsSum);
   }
 
   // find leftover budget based on income sum
