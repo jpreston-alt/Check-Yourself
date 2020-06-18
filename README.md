@@ -10,12 +10,12 @@ After the user has entered their monthly income they are able to enter their mon
 Check Yourself is built with Node and Express. It uses Passport.js for user authentication, and stores the users information in a MySQL Database. It was built by an awesome group of developers, listed in the [credits](#credits) section.
 
 <p float="left">
-<img src="./public/images/readme-images/login.png" alt="Login Page Image" width="45%"/>
-<img src="./public/images/readme-images/dashboard.png" alt="Dashboard Image" width="45%"/><br>
-<img src="./public/images/readme-images/home.png" alt="Homepage Image" width="45%"/>
-<img src="./public/images/readme-images/spending.png" alt="Spending Page Image" width="45%"/><br>
-<img src="./public/images/readme-images/about.png" alt="About Page Image" width="45%"/>
-<img src="./public/images/readme-images/contact.png" alt="Contact Page Image" width="45%"/><br>
+<img src="./public/images/readme-images/login.png" alt="Login Page Image" width="45%" style="margin: 10px;"/>
+<img src="./public/images/readme-images/dashboard.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/><br>
+<img src="./public/images/readme-images/home.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
+<img src="./public/images/readme-images/spending.png" alt="Spending Page Image" width="45%" style="margin: 5px;"/><br>
+<img src="./public/images/readme-images/about.png" alt="About Page Image" width="45%" style="margin: 10px;"/>
+<img src="./public/images/readme-images/contact.png" alt="Contact Page Image" width="45%" style="margin: 10px;"/><br>
 </p>
 
 ## Table of Contents
