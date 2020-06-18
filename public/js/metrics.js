@@ -54,6 +54,8 @@ $(document).ready(() => {
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         title: {
           display: true,
           text: "Monthly Spending Dashboard",

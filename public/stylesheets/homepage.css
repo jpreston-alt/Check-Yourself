@@ -136,8 +136,13 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
-.nav-bar {
-  width: 50%;
-}
+  .nav-bar {
+    width: 50%;
+  }
+
+  #barChart-container{
+    height:100%; 
+    width:80vw;
+  }
 }
 
