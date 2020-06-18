@@ -22,6 +22,7 @@ Check Yourself is built with Node and Express. It uses Passport.js for user auth
 * [Technologies](#technologies)
 * [Usage](#usage)
 * [Finished Product](#finished-product)
+* [Directions for Future Development](#Directions-for-future-Development)
 * [Credits](#Credits)
 * [Questions](#questions)
 
@@ -59,6 +60,11 @@ View deployed Heroku app [here](https://jp-project2.herokuapp.com/). <br>
 View a video of the full application [here](https://drive.google.com/file/d/1XqTCC55GbH0I114fKOVrqhTVmMhPOKVF/view).<br>
 
 ![](/public/images/readme-images/check-yourself.gif)
+
+## Directions for Future Development
+* Add historical data to be able to see prior periods spendings and compare those to the current period spending.
+* When a user clicks on a spending categories from the pie chart, they are presented with their expenses in that category.
+* Connect users’ bank accounts to application via Plaid API.
 
 ## Credits
 * [Joanna Preston](https://github.com/jpreston-alt)
