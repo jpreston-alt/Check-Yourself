@@ -1,21 +1,31 @@
+html, body {
+  height: 100%;
+  font-family: 'Muli', sans-serif; 
+  box-sizing: border-box;
+}
 .inner-text {
-    background-color: white;
-    padding: 20px;
+  background-color: white;
+  padding: 20px;
 }
 
 #about {
-    color: black;
-    background-image: url("https://img.pngio.com/abstract-simple-black-and-white-waving-3d-grid-or-mesh-as-cartoon-black-and-white-background-images-png-1920_1080.png");
-    font-family: 'Muli', sans-serif;
+  color: black;
+  background-image: url("https://img.pngio.com/abstract-simple-black-and-white-waving-3d-grid-or-mesh-as-cartoon-black-and-white-background-images-png-1920_1080.png");
+  font-family: 'Muli', sans-serif;
 }
 
 .nav-bar {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
-#nav-names {
-    color: white;
+.navbar-toggler-icon, .navbar-toggler {
+  color: white !important;
+  background-color: white;
+}
+
+.nav-link {
+  color: white !important;
 }
 
 #logo-img {
@@ -28,78 +38,94 @@ h1 {
 }
 
 #white-square {
-    background-color: white;
-    width: 700px;
-    height: 700px;
-    float: right;
-    padding: 20px;
-  }
+  background-color: white;
+  float: right;
+  padding: 20px;
+  border: 2px solid black;
+  width: 100%;
+}
 
 #black-square {
-    background-color: black;
-    color: white;
-    width: 650px;
-    height: 550px;
-    float: right;
-    padding: 20px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  float: right;
+  padding: 20px;
+
 }
 
 .budget-icon {
-    height: 255px;
-    width: 595px;
-    padding: 20px;
+  height: 255px;
+  width: 595px;
+  padding: 20px;
 }
 
 input[type=text], select, textarea {
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px; 
-    margin-bottom: 16px; 
-    resize: vertical 
-  }
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
   
-  input[type=submit] {
-    background-color: black;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
   
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-
-  #contact {
-    color: black;
-    background-image: url("https://wallpaperaccess.com/full/296951.jpg");
-    font-family: 'Muli', sans-serif;
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
+.form-container {
+  border-radius: 5px;
+  padding: 20px;
+}
 
-.clearfix {
-    overflow: auto;
-  }
+#contact {
+  color: black;
+  background-image: url("https://wallpaperaccess.com/full/296951.jpg");
+  font-family: 'Muli', sans-serif;
+}
 
 #contact-form {
     height: 605px;
 }
+
+footer {
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  clear: both;
+}
+
+.hide{
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  footer{
+    bottom: 0;
+  }
+
+  #white-square{
+    width: 700px;
+    height: 100%;
+  }
+
+  .hide{
+    display:flex;
+  }
+}
+  

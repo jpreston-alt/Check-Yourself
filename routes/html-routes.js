@@ -11,7 +11,6 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     if (req.user) {
       return res.redirect("/home");
-      // console.log(req.user);
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -43,7 +42,6 @@ module.exports = function(app) {
   });
 
   // ****************************** HANDLEBARS EXPENSE ROUTE ********************************** //
-  // switch route name "/expenses" for spending page route name
   app.get("/expenses", isAuthenticated, (req, res) => {
     db.Expense.findAll({
       where: {
@@ -60,7 +58,6 @@ module.exports = function(app) {
   });
 
   // ****************************** HANDLEBARS INCOME ROUTE ********************************** //
-  // switch route name "/incomes" for home page route name
   app.get("/incomes", (req, res) => {
     db.Income.findAll({
       where: {
@@ -74,20 +71,5 @@ module.exports = function(app) {
       .catch(err => {
         res.status(404).json(err);
       });
-  });
-
-  // ****************************** HTML CHART TEST ROUTES ********************************** //
-  // html route for expense chart
-  app.get("/expense-chart", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "../public/chart-test/expense-chart.html")
-    );
-  });
-
-  // html route for income chart
-  app.get("/income-chart", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "../public/chart-test/income-chart.html")
-    );
   });
 };

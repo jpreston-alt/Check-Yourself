@@ -89,8 +89,6 @@ $(document).ready(() => {
         $("#savings-balance").text(`$${savingsSum}`);
         $("#leftover-budget").text(`$${leftoverBudget}`);
         calcGoals(totalIncome);
-
-        // localStorage.setItem("userTotalExpenses", needsSum, wantsSum, savingsSum);
       });
     });
   }
@@ -137,7 +135,7 @@ $(document).ready(() => {
   function calcGoals(totalInc) {
     const wantsGoal = totalInc * 0.3;
     const needsGoal = totalInc * 0.5;
-    const savingsGoal = totalInc * 0.3;
+    const savingsGoal = totalInc * 0.2;
     $("#goal-wants").text(`$${wantsGoal}`);
     $("#goal-needs").text(`$${needsGoal}`);
     $("#goal-savings").text(`$${savingsGoal}`);
@@ -165,7 +163,7 @@ $(document).ready(() => {
           {
             label: "Categories",
             data: dataArr,
-            backgroundColor: ["#037bfe", "#dd3444", "#28a745", "#333b3f"],
+            backgroundColor: ["#6a2c70", "#f08a5d", "#b83b5e", "#ffc933"],
             borderWidth: 1,
             borderColor: "white",
             hoverBorderWidth: 3
@@ -173,11 +171,6 @@ $(document).ready(() => {
         ]
       },
       options: {
-        // title: {
-        //   display: true,
-        //   text: "Monthly Expenses",
-        //   fontSize: 25
-        // },
         legend: {
           display: true,
           labels: {

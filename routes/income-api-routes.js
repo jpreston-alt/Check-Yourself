@@ -44,6 +44,4 @@ module.exports = function(app) {
       res.status(200).end();
     });
   });
-
-  // update income
 };

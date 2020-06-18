@@ -15,52 +15,81 @@
 
 <body id="about">
     <div class="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="/"><img id="logo-img" src="images/checkyourself.JPG"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/home">Budget</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
-              </li>
-          </ul>
-        </div>
+      <nav class="navbar navbar-expand-lg navbar-light ">
+          <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" id="nav-names" href="about.html">About<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item text-white">
+                      <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="nav-names" href="/home">Budget</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="nav-names" href="/expenses">Spending</a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+              </ul>
+          </div>
       </nav>
-    </div>
+  </div>
+  
+  <div class="container-fluid">
+      <div class="row full-height-row">
+          <div class="col-12 col-md-6 offset-md-6">
+              <div class="form-container">
+                <div class = "row">
+                  <div class = "col">
+                    <div id=white-square class="animate__animated animate__backInRight">
 
-    <div id=white-square class="animate__animated animate__backInRight">
-    <h1>Welcome to Check Yourself, your wallet will thank you!</h1>
-    <br>
-        <div id="black-square"><p>Check Yourself is an easy app with one simple goal: budget better.</p>
-            We like to operate by the widely popularized and so-called "50/20/30 budget rule" (sometimes labeled "50-30-20".) 
-            <br><br>
-            In Senator Elizabeth Warren's, <i>All Your Worth: The Ultimate Lifetime Money Plan, </i> the basic rule is to divide up after-tax income and allocate it to spend: 50% on needs, 30% on wants, and sock away 20% to savings.
-            <br><br>
-            We're here to help you reach those goals! Visit our "Budget" tab to enter your information and get started, or the "Spending" tab to track your latest expenses and stay on track.
-            <br>
-            <img class="budget-icon" src="images/Budget-icon-by-back1design1.jpg" alt="budget icon">
-        </div>
-    </div>
+                      <h1>Welcome to Check Yourself, your wallet will thank you!</h1>
 
+                      <div class = "container">
+                        <div id="black-square">
+                          <p>Check Yourself is an easy app with one simple goal: budget better.
+                          We like to operate by the widely popularized and so-called "50/20/30 budget rule" (sometimes labeled "50-30-20".) 
+                          <br><br>
+                          In Senator Elizabeth Warren's, <i>All Your Worth: The Ultimate Lifetime Money Plan, </i> the basic rule is to divide up after-tax income and allocate it to spend: 50% on needs, 30% on wants, and sock away 20% to savings.
+                          <br><br>
+                          We're here to help you reach those goals! Visit our "Budget" tab to enter your information and get started, or the "Spending" tab to track your latest expenses and stay on track.
+                          <br>
+                          </p>
+                          <img class=" hide budget-icon" src="images/Budget-icon-by-back1design1.jpg" alt="budget icon">
+                        </div>
+                      </div>  
+                    </div> 
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <footer>
+              <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
+              <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>,
+                  <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna
+                      Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
+          </footer>
+      </div>
+  </div>
 
-    <footer class="clearfix">
-        <p><i class="far fa-copyright"></i>Copyright BCS Bootcamp</p>
-        <p><i class="far fa-heart"></i> Thoughtfully created by <a href="https://github.com/cmausley">Christina Ausley</a>, <a href="https://github.com/sdemkovich">Sveta Demkovich</a>, <a href="https://github.com/jpreston-alt">Joanna Preston</a>, and <a href="https://github.com/gidmp">Daniel Luke Tanoeihusada</a></p>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+       crossorigin="anonymous">
+    </script>
     <script src="contactabout.js"></script>
+      <script src="contactabout.js"></script>
 </body>
 
 </html>
