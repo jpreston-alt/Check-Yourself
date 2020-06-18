@@ -34,6 +34,8 @@ $(document).ready(() => {
       })
       .catch(err => {
         console.log(err);
+        $("#alert").css("display", "block");
+        $(".msg").text("Incorrect email or password");
       });
   }
 });

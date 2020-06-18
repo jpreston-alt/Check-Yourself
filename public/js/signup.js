@@ -36,8 +36,8 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   }
 
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+  function handleLoginErr() {
+    $("#alert .msg").text("A user with this email already exists");
     $("#alert").fadeIn(500);
   }
 });

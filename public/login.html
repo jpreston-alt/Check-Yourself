@@ -9,13 +9,14 @@
   <link href="stylesheets/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/326ee3d75f.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/png" href="./images/favicon-32x32.png">
 
 </head>
 
 <body>
   <div class="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href=""><img id="logo-img" src="./images/checkyourself.JPG"></a>
+        <a class="navbar-brand" href="/"><img id="logo-img" src="./images/checkyourself.JPG"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,9 +29,6 @@
                 </li>
                 <li class="nav-item text-white">
                     <a class="nav-link" id="nav-names" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nav-names" href="/home">Budget</a>
                 </li>
             </ul>
         </div>
@@ -69,6 +67,10 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="password-input" placeholder="Password">
                       </div>
+                    </div>
+                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <span class="sr-only">Error:</span> <span class="msg"></span>
                     </div>
                     <div style="margin-left:15px;">
                       <button type="submit" class="btn btn-outline-dark">Login</button>         
